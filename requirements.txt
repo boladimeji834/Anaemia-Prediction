@@ -1,0 +1,7 @@
+sklearn
+matplotlib
+jupyter-notbook
+seaborn
+joblib
+pandas
+numpy 

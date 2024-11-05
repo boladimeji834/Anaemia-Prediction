@@ -1,3 +1,4 @@
+# evaluate_model.py
 
 import joblib
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
@@ -5,7 +6,7 @@ from data_preprocessing import preprocess_data, split_data
 import pandas as pd 
 
 def evaluate_model(model, X_test, y_test):
-    """vthis function evaluate the model using test data and print metrics"""
+    """Evaluate the model using test data and print metrics."""
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
@@ -23,6 +24,6 @@ if __name__ == "__main__":
         df = pd.read_csv("../datasets/file_.csv").set_index("Number"))
     X_train, X_test, y_train, y_test = split_data(X, y)
     
-    # load the model
+    # Load the model
     model = joblib.load("../models/anaemia_pipeline.joblib")
     evaluate_model(model, X_test, y_test)

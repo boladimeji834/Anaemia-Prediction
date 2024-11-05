@@ -2,21 +2,21 @@ import joblib
 import streamlit as st
 import pandas as pd
 
-# to load the randomforest pipeline with all the preprocessing steps 
-model = joblib.load('../models/anaemia_pipeline.joblib')  
+# Load the trained model and performance metrics
+model = joblib.load('../models/anaemia_pipeline.joblib')  # Update this path as needed
 
-
-# performance metrics
+# Example model performance metrics (replace with actual metrics)
 model_performance = {
-    'Accuracy': 0.99,  
+    'Accuracy': 0.99,  # Replace with actual metrics
     'Precision': 0.97,
     'Recall': 1.0,
     'F1 Score': 0.99,
 }
 
+# Streamlit App Layout
 st.title("Anaemia Prediction App")
 
-# My little sidebar
+# Sidebar Navigation
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ("Home", "Model Performance", "Make a Prediction"))
 
@@ -28,20 +28,21 @@ if page == "Home":
 
 elif page == "Model Performance":
     st.header("Model Performance Metrics")
-    # displaying the performance metrics 
+    # Display the model performance metrics
     for metric, value in model_performance.items():
         st.write(f"**{metric}:** {value}")
 
 elif page == "Make a Prediction":
     st.header("Make a Prediction")
 
-    # input fields for prediction
+    # Input fields for prediction
     sex = st.selectbox("Sex", options=["Male", "Female"])
     red_pixel = st.number_input("Red Pixel (%)", min_value=0.0)
     green_pixel = st.number_input("Green Pixel (%)", min_value=0.0)
     blue_pixel = st.number_input("Blue Pixel (%)", min_value=0.0)
     hb = st.number_input("Hemoglobin (Hb)", min_value=0.0)
 
+    # Button to trigger prediction
     if st.button("Predict"):
         # this logic preprocess the data as needed
         sex_value = "M" if sex == 'Male' else "F"  # encoding for the sex input
@@ -62,14 +63,14 @@ elif page == "Make a Prediction":
         features['Hb'] = features['Hb'].astype(float)
         features['Sex'] = features['Sex'].astype(str)
 
-        # check for NaN values in input from frontend
+        # Check for NaN values in input from frontend
         if features.isnull().values.any():
             st.error("Input data contains NaN values. Please check your inputs.")
         else:
-            # make prediction
+            # Make prediction
             prediction = model.predict(features)
             
-            # display prediction result
+            # Display prediction result
             prediction_str = "Anaemic" if prediction[0] == 1 else "Not Anaemic"
             st.success(f"Prediction: {prediction_str}")
 

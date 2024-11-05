@@ -12,9 +12,6 @@ Anemia is a common health condition that, if left untreated, can lead to serious
 - [Usage](#usage)
 - [Model Performance](#model-performance)
 - [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 This project employs machine learning algorithms to predict anemia risk using patient health metrics. With the model's predictions, healthcare providers can identify patients at risk for anemia and take preemptive steps to improve health outcomes.
@@ -24,10 +21,8 @@ The dataset includes anonymized patient health information such as:
 - Hemoglobin levels
 - Red blood cell counts
 - Hematocrit values
-- Age
-- Additional biomarkers and demographic features
+- ![Dataset](https://www.kaggle.com/datasets/humairmunir/anaemia-prediction-dataset?select=file_.csv)
 
-*(Specify the source of your dataset, or if it’s synthetic, mention that as well)*
 
 ## Technologies Used
 - **Python**
@@ -42,7 +37,7 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/boladimeji834/Anaemia-Prediction.git
-    cd anemia-prediction
+    cd Anemia-Prediction
     ```
 
 2. **Install the dependencies**:
@@ -84,7 +79,9 @@ The model achieved an accuracy of **X%** on the test set. Key metrics include:
 
 ## Project Structure
 anemia-prediction/
-├── data/               
+├── data/    
+├── images/  
+├── files/  
 ├── notebooks/           
 ├── src/                 
 │   ├── data_preprocessing.py

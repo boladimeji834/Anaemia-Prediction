@@ -40,9 +40,13 @@ if __name__ == "__main__":
     # create the pipeline and train it
     pipeline = create_pipeline()
     pipeline.fit(X_train, y_train)
+    
+    print("pipeline model training completed and saved.")
+    print("this is the format of the training data: ")
     print(X_test.head())
     print(y_test.head())
 
     # save the entire pipeline as a joblib file
     joblib.dump(pipeline, "models/anaemia_pipeline.joblib")
     print("Pipeline model training completed and saved.")
+    print("mo")

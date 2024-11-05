@@ -27,4 +27,4 @@ if __name__ == "__main__":
     # Split the data
     X_train, X_test, y_train, y_test = split_data(X, y)
 
-    print("Data split successfully!")
+    print("Data has been preprocessed successfully, you can now train the model.")

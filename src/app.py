@@ -21,10 +21,12 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ("Home", "Model Performance", "Make a Prediction"))
 
 if page == "Home":
-    st.header("Welcome to the Anaemia Prediction App!")
-    st.write("Use the sidebar to navigate through the app.")
-    st.write("Select 'Model Performance' to view the performance metrics of the model.")
-    st.write("Select 'Make a Prediction' to make a prediction for anaemia.")
+    st.header("Welcome to the Anaemia Prediction App")
+    st.write("Use the sidebar to navigate through the app")
+    st.write("Select 'Model Performance' to view the performance metrics of the model")
+    st.write("Select 'Make a Prediction' to make a prediction for anaemia")
+    st.success("Made by Oladimeji")
+
 
 elif page == "Model Performance":
     st.header("Model Performance Metrics")
@@ -72,5 +74,6 @@ elif page == "Make a Prediction":
             # display prediction result
             prediction_str = "Anaemic" if prediction[0] == 1 else "Not Anaemic"
             st.success(f"Prediction: {prediction_str}")
+
 
 

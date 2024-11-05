@@ -5,7 +5,7 @@ Anemia is a common health condition that, if left untreated, can lead to serious
 ![Project Preview](path_to_screenshot_or_diagram.png)
 
 ## Table of Contents
-- ![Project Preview](images/project_preview.png)
+- ![Project Preview](images/project_preview.jpg)
 - [Dataset](#dataset)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)

@@ -2,7 +2,7 @@
 
 Anemia is a common health condition that, if left untreated, can lead to serious complications. This project uses machine learning to predict the likelihood of anemia in patients based on various health features, supporting early diagnosis and timely intervention.
 
-![Project Preview](../images/project_preview.jpg)
+![Project Preview](images/project_preview.jpg)
 
 ## Table of Contents
 - ![Project Preview](../images/project_preview.jpg)
